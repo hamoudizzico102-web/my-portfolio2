@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mohmad Moukaddem — Graphic Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#080808;--s:#0f0f0f;--b:#1a1a1a;--t:#e8e8e8;--m:#555;--f:#222}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t)}
 
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 52px;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,8,0.92);backdrop-filter:blur(12px);border-bottom:.5px solid var(--b)}
+.nl{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;color:#fff;text-transform:uppercase}
+.nr{display:flex;gap:32px}
+.nr a{font-size:11px;color:var(--m);letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:color .2s;text-decoration:none}
+.nr a:hover{color:#fff}
+
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 52px 64px;position:relative;overflow:hidden;border-bottom:.5px solid var(--b)}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(var(--f) 1px,transparent 1px),linear-gradient(90deg,var(--f) 1px,transparent 1px);background-size:80px 80px;opacity:0.25}
+.htag{font-size:10px;letter-spacing:4px;color:var(--m);text-transform:uppercase;margin-bottom:20px}
+.hname{font-family:'Syne',sans-serif;font-size:clamp(52px,10vw,116px);font-weight:700;line-height:.9;letter-spacing:-4px;color:#fff}
+.hname .dim{-webkit-text-stroke:1px #2a2a2a;color:transparent}
+.hsub{margin-top:36px;font-size:11px;color:var(--m);letter-spacing:2.5px;text-transform:uppercase;display:flex;gap:16px;align-items:center}
+.hsub i{width:20px;height:.5px;background:var(--b);display:inline-block;font-style:normal}
+.hnum{position:absolute;right:52px;bottom:60px;font-family:'Syne',sans-serif;font-size:110px;font-weight:700;-webkit-text-stroke:1px #181818;color:transparent;line-height:1;user-select:none}
+
+.sec{padding:96px 52px;border-top:.5px solid var(--b)}
+.shead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:60px}
+.stitle{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;color:var(--m);text-transform:uppercase}
+.scnt{font-size:10px;color:var(--f);letter-spacing:2px}
+
+/* BRAND CARDS */
+.blist{display:flex;flex-direction:column;gap:2px}
+.bcard{display:grid;grid-template-columns:1fr 1fr;min-height:360px;cursor:pointer;border:.5px solid var(--b);overflow:hidden;transition:border-color .3s}
+.bcard:hover{border-color:#2a2a2a}
+.bcover{background:#000;display:flex;align-items:center;justify-content:center;padding:52px;border-right:.5px solid var(--b);overflow:hidden}
+.bcover img{max-width:240px;max-height:160px;object-fit:contain;transition:transform .6s;filter:brightness(.8)}
+.bcard:hover .bcover img{transform:scale(1.07);filter:brightness(1)}
+.bcover.photo{padding:0}
+.bcover.photo img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;filter:brightness(.85)}
+.bcard:hover .bcover.photo img{transform:scale(1.04);filter:brightness(1)}
+.binfo{padding:48px;display:flex;flex-direction:column;justify-content:space-between;background:var(--s)}
+.bnum{font-family:'Syne',sans-serif;font-size:60px;font-weight:700;-webkit-text-stroke:1px #1e1e1e;color:transparent;line-height:1}
+.bname{font-family:'Syne',sans-serif;font-size:38px;font-weight:700;color:#fff;letter-spacing:-1px;margin-bottom:8px}
+.btype{font-size:11px;letter-spacing:2px;color:var(--m);text-transform:uppercase;margin-bottom:24px}
+.btags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.btag{font-size:10px;letter-spacing:1.5px;color:var(--m);border:.5px solid var(--b);padding:5px 10px;text-transform:uppercase}
+.bcta{font-size:10px;letter-spacing:2px;color:var(--m);text-transform:uppercase;display:flex;align-items:center;gap:8px;transition:color .3s}
+.bcta::after{content:'→';transition:transform .3s}
+.bcard:hover .bcta{color:#fff}
+.bcard:hover .bcta::after{transform:translateX(6px)}
+
+/* BRAND PAGES */
+.bp{display:none;position:fixed;inset:0;background:var(--bg);z-index:300;overflow-y:auto}
+.bp.on{display:block;animation:su .35s ease}
+@keyframes su{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.bpnav{padding:20px 52px;display:flex;justify-content:space-between;align-items:center;border-bottom:.5px solid var(--b);position:sticky;top:0;background:rgba(8,8,8,0.95);backdrop-filter:blur(12px);z-index:10}
+.bpn{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#fff}
+.bpback{font-size:10px;letter-spacing:2px;color:var(--m);text-transform:uppercase;cursor:pointer;transition:color .2s}
+.bpback:hover{color:#fff}
+.bpback::before{content:'← '}
+.bphero{padding:64px 52px 52px;border-bottom:.5px solid var(--b);display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:center}
+.bplogo{background:#000;border:.5px solid var(--b);padding:44px;display:flex;align-items:center;justify-content:center;height:200px}
+.bplogo img{max-width:180px;max-height:120px;object-fit:contain}
+.bplogo.photo-logo{padding:0;overflow:hidden}
+.bplogo.photo-logo img{width:100%;height:100%;object-fit:cover;max-width:none;max-height:none}
+.bpey{font-size:10px;letter-spacing:3px;color:var(--f);text-transform:uppercase;margin-bottom:14px}
+.bptitle{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,72px);font-weight:700;line-height:.9;letter-spacing:-2px;color:#fff;margin-bottom:28px}
+.bpmeta{display:flex;gap:36px;flex-wrap:wrap}
+.bpmi label{font-size:10px;letter-spacing:2px;color:var(--f);text-transform:uppercase;display:block;margin-bottom:5px}
+.bpmi span{font-size:13px;color:var(--m)}
+
+.ig{display:grid;gap:2px;padding:2px}
+.ig2{grid-template-columns:repeat(2,1fr)}
+.ig3{grid-template-columns:repeat(3,1fr)}
+.ibox{overflow:hidden;background:#000;aspect-ratio:1}
+.ibox.tall{aspect-ratio:4/5}
+.ibox.auto{aspect-ratio:auto}
+.ibox img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.ibox:hover img{transform:scale(1.04)}
+.ibox.auto img{height:auto;object-fit:contain}
+.lgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding:2px 2px 0}
+.lcell{background:#000;border:.5px solid var(--b);padding:52px 44px;display:flex;align-items:center;justify-content:center}
+.lcell img{max-height:150px;max-width:100%;object-fit:contain}
+
+/* YT grid */
+.yt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:3px}
+.yt-card{display:block;text-decoration:none;position:relative;overflow:hidden;background:#000;aspect-ratio:16/9}
+.yt-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s,filter .3s;filter:brightness(.8)}
+.yt-card:hover img{transform:scale(1.06);filter:brightness(.45)}
+.yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.play-btn{width:44px;height:44px;background:rgba(255,0,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.yt-card:hover .yt-play{opacity:1}
+
+/* contact links inside brand page */
+.bp-contact{padding:64px 52px;border-top:.5px solid var(--b)}
+.bp-contact-title{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:var(--m);text-transform:uppercase;margin-bottom:32px}
+.bp-clinks{max-width:480px}
+.bp-cl{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:.5px solid var(--b);text-decoration:none}
+.bp-cl span{font-size:12px;color:var(--m);letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}
+.bp-cl em{font-size:12px;color:var(--f);font-style:normal;transition:all .25s}
+.bp-cl:hover span,.bp-cl:hover em{color:#fff}
+.bp-cl:hover em{transform:translate(4px,-4px)}
